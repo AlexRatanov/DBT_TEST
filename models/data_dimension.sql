@@ -12,7 +12,7 @@ ELSE 'BUSINESSDAY'
 END AS DAY_TYPE,
 {{get_season('STARTED_AT')}},
 {{function1('STARTED_AT')}}
-from {{ source('demo', 'bike') }}
+from {{ ref('stg_bike') }}
 where started_at !='started_at'
 
 )
